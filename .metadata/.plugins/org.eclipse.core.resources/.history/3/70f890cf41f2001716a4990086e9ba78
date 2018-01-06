@@ -1,0 +1,54 @@
+package com.testng.execution;
+
+import java.io.FileInputStream;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+public class WebRunner {
+	
+	@Test
+	public void Register()
+	{
+		Properties p =new Properties();
+		p.load(new FileInputStream ("Web.properties"));
+		WebDriver driver;
+		
+		switch (p.getProperty("browser"))
+		{
+		case "gc":
+			System.setProperty("webdriver.chrome.driver" , "Driver/chromedriver.exe");
+			driver = new ChromeDriver();
+			break;
+		case "ff":
+			System.setProperty("webdriver.gecko.driver" , "Driver/geckdriver.exe");
+			driver = new FirefoxDriver();
+			break;
+			
+		case "ie":
+			System.setProperty("webdriver.ie.driver" , "Driver/IEDriverServer.exe");
+			driver = new FirefoxDriver();
+			break;	
+		default:
+			System.setProperty("webdriver.chrome.driver" , "Driver/chromedriver.exe");
+			driver = new ChromeDriver();
+			break;
+			
+		}
+		
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.get(p.getProperty("url"));
+		WebElement my_acc = driver.findElement(By.linkText("MY ACCOUNT"));
+		my_acc.click();
+		WebElement register = driver.findElement(By.xpath("//span[text()='Register']"));
+		register.click();
+			
+	}
+	
+	
+
+}

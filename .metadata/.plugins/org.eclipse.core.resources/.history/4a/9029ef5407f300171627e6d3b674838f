@@ -1,0 +1,10 @@
+Feature: Login onto Magento
+line1 description
+line2 desc  
+# for commenting  this is features file
+
+Scenario: Happy Path Scenario
+Given I am a registered user on magento
+When I update my usernaem and password
+When I click on login button
+Then I should get access to the admin panel

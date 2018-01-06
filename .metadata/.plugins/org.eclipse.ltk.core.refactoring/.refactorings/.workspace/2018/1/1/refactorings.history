@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;framework&apos; to &apos;Mavenframework&apos;" description="Rename resource &apos;framework&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/framework" name="Mavenframework" stamp="1515257876472" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Mavenframework&apos; to &apos;CucumberMavenframework&apos;" description="Rename resource &apos;Mavenframework&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Mavenframework" name="CucumberMavenframework" stamp="1515260118031" updateReferences="true"/>
+</session>

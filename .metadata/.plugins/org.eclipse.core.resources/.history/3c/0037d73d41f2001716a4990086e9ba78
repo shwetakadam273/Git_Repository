@@ -1,0 +1,28 @@
+package com.testng.execution;
+
+import java.util.Properties;
+
+public class WebRunner {
+	
+	@Test
+	public void Register()
+	{
+		Properties p =new Properties();
+		p.load(new FileInputStream ("Web.properties"));
+		switch (p.getProperty("browser"))
+		{
+		case "gc":
+			System.setProperty("webdriver.chrome.driver" , "Driver/chromedriver.exe");
+			driver = new ChromeDriver();
+			break;
+		case "ff":
+			System.setProperty("webdriver.gecko.driver" , "Driver/geckdriver.exe");
+			driver = new FirefoxDriver();
+			break;
+			
+		}
+	}
+	
+	
+
+}

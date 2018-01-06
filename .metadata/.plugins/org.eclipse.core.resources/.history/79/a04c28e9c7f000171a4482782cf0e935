@@ -1,0 +1,36 @@
+package SeleniumExample;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SeleniumExample {
+
+	private static final By By = null;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		System.out.println("welcome to page");
+		
+		WebDriver driver =new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.get("http://magento.com");
+		WebElement my_acc =driver.findElement(By.linkText("MY ACCOUNT"));
+		my_acc.click();
+		WebElement email =driver.findElement(By.name("login[username]"));
+		email.clear();
+		email.sendKeys("natarajan.ramanathan93@gmail.com");
+		WebElement password =driver.findElement(By.id("pass"));
+		password.clear();
+		password.sendKeys("Welcome123");
+		
+		
+
+	}
+
+}

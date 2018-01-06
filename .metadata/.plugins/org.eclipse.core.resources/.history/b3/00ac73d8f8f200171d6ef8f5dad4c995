@@ -1,0 +1,28 @@
+package DD;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class datadriven {
+	
+	public static void main(String[] args) throws FileNotFoundException, IOException
+	{
+		XSSFWorkbook wb =new XSSFWorkbook();
+		XSSFSheet sh =wb.createSheet("Test");
+		XSSFRow row =sh.createRow(0);
+		XSSFCell cell =row.createCell(0);
+		cell.setCellValue(12345);
+		wb.write(new FileOutputStream("Sample.xlsx")); // .xlsx file is created under your project
+		wb.close();
+		
+		
+		
+	}
+
+}

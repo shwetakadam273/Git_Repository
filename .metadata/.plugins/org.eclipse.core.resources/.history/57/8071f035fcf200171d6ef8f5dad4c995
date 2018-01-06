@@ -1,0 +1,64 @@
+package DD;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+//write data in excel
+
+//public static void main(String[] args) throws FileNotFoundException, IOException
+//{
+//	XSSFWorkbook wb =new XSSFWorkbook();
+//	XSSFSheet sh =wb.createSheet("Test");
+//	XSSFRow row =sh.createRow(0);
+//	XSSFCell cell =row.createCell(0);
+//	cell.setCellValue(12345);
+//	wb.write(new FileOutputStream("Sample.xlsx")); // .xlsx file is created under your project. here we can give complete path of xls 
+//	wb.close();
+//					
+//}
+
+// read .xlsx
+public class datadriven {   
+	
+	public static void main(String[] args) throws FileNotFoundException, IOException
+	{
+		XSSFWorkbook wb =new XSSFWorkbook(new FileInputStream ("Sample.xlsx"));
+		XSSFSheet sh =wb.getSheet("Test");
+		XSSFRow row =sh.getRow(0);
+		XSSFCell cell =row.getCell(0);
+		// cell.setCellValue(12345); use to write value in cell
+		//wb.write(new FileOutputStream("Sample.xlsx")); // .xlsx file is created under your project. here we can give complete path of xls 
+	
+		try 
+		{
+			System.out.println(cell.getStringCellValue());
+		}
+		catch(IllegalStateException e)
+		{
+			if (e.getMessage().contains("NUMERIC"))
+			{
+				System.out.println(cell.getNumericCellValue());
+				int a = (int) cell.getNumericCellValue(); // need to use type casting if we dont want to store value in decimal like 12.0 here value store like 12
+			}
+			else if(e.getMessage().contains("BOOLEAN"))
+			{
+				System.out.println(cell.getBooleanCellValue());
+			}
+			else if (e.getMessage().contains("STRING"))
+			{
+				System.out.println(cell.getStringCellValue());
+			}
+		}
+		
+		wb.close();
+						
+	}
+
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="runner" project="Mavenframework" tests="4" started="4" failures="0" errors="0" ignored="4">
+  <testsuite name="Maven.runner" time="0.001">
+    <testsuite name="Feature: Login onto Magento" time="0.001">
+      <testsuite name="Scenario: Happy Path Scenario" time="0.001" incomplete="true">
+        <skipped/>
+        <testcase name="Given I am a registered user on magento" classname="Scenario: Happy Path Scenario" time="0.001" ignored="true"/>
+        <testcase name="When I update my usernaem and password" classname="Scenario: Happy Path Scenario" time="0.0" ignored="true"/>
+        <testcase name="When I click on login button" classname="Scenario: Happy Path Scenario" time="0.0" ignored="true"/>
+        <testcase name="Then I should get access to the admin panel" classname="Scenario: Happy Path Scenario" time="0.0" ignored="true"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testrun>

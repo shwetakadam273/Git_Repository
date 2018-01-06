@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/CB/Downloads/selenium-server-standalone-3.8.1.jar"/>
+	<classpathentry kind="lib" path="C:/Automation/Appium/drive-download-20171228T074655Z-001/testng-6.11.jar"/>
+	<classpathentry kind="lib" path="C:/Automation/Selenium Reporting file/version 5.5 beta/ATUReporter_Selenium_testNG_5.5 BETA + ATU Recorder 2.1+javadoc+propfile/ATUReporter_Selenium_testNG_5.5_BETA.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
